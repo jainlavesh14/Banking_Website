@@ -1,0 +1,99 @@
+{% extends 'base.html' %}
+
+{% block title %} Transaction History {% endblock %}
+
+{% block body %}
+		
+				
+	<br>
+	<h1 style = "font-size : 40px; color: #54451d; font-family : 'Sitka Text';"> Transaction History </h1>
+				
+	<form method = "POST">
+		{% csrf_token %}
+				
+		
+		<select style = "width : 400px;" name="history" id = "history" class="form-control form-control-sm">
+		<option value = "sender" selected disabled hidden>Select customer</option>
+		{% for d in data %}
+		 	<option value = {{ d.email }}>{{ d.name }}</option>
+		{% endfor %}
+		</select>
+
+				<br>
+				<input type = 'submit' class="btn btn-outline-dark btn-sm" value = 'View' style = "border-radius : 10px; width : 138px;"><br><br>
+
+	<table style = "width : 900px;" class="table table-striped table-bordered table-hover border-dark">
+	
+	{% if dumm %}
+		<h5> Debit Details </h5>
+		<tr class="table-info" align = 'center'>
+			<th> Sender </th>
+			<th> Receiver</th>
+			<th> Amount </th>
+			<th> Date and Time </th>
+			<th> Status </th>
+		</tr>
+	{% endif %}
+		{% for da in dumm %}
+		<tr align = center>
+			<td>{{ da.send }}</td>
+			<td>{{ da.receive }}</td>
+			<td>{{ da.amount }}</td>
+			<td>{{ da.dt }}</td>
+			<td>Debited</td>
+
+		</tr>	
+		{% endfor %}
+	
+</table>
+
+	<table style = "width : 900px;" class="table table-striped table-bordered table-hover border-dark">
+	<br>	
+	{% if rdumm %}
+		<h5> Credit Details </h5>
+		<tr class="table-info" align = 'center'>
+			<th> Sender </th>
+			<th> Receiver</th>
+			<th> Amount </th>
+			<th> Date and Time </th>
+			<th> Status </th>
+		</tr>
+	{% endif %}
+		{% for da in rdumm %}
+		<tr align = center>
+			<td>{{ da.send }}</td>
+			<td>{{ da.receive }}</td>
+			<td>{{ da.amount }}</td>
+			<td>{{ da.dt }}</td>
+			<td>Credited</td>
+
+		</tr>	
+		{% endfor %}
+	
+</table>
+
+		</form>
+		<h6 style="color:red;">{{ msg }}</h6>
+			
+			</div>
+		</div>
+	
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

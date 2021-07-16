@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %} Transfer Money {% endblock %}
+
+
+
+
+{% block body %}
+		<div class="container">
+		 	<div class="row">
+				<div class="col-lg-6">
+					<br>
+				<h1 style = "font-size : 40px; color: #54451d; font-family : 'Sitka Text';"> Transfer Money </h1>
+	
+				<form method = "POST">
+				{% csrf_token %}
+							
+				<select name="account_sender" id = "account_from" class="form-control form-control-sm">
+				<option value = "sender" selected disabled hidden>Select sender</option>
+					{% for d in data %}
+   				 	<option value = {{ d.email }}>{{ d.name }}</option>
+   					{% endfor %}
+				</select>
+
+					<br>
+
+				<select name="account_receiver" id = "account_to" class="form-control form-control-sm">
+				<option value = "receiver" selected disabled hidden>Select receiver</option>
+					{% for d in data %}
+   				 	<option value = {{ d.email }}>{{ d.name }}</option>
+   					{% endfor %}
+				</select>
+					
+				<br>
+				<input type = 'number' class="form-control form-control-sm" placeholder = "Enter Amount(Minimum = Rs.1)" min = "1" required name = 'transfer_amount' step = "any">
+				<br>
+
+
+				<script src='https://www.google.com/recaptcha/api.js'></script>
+<div class="g-recaptcha" data-sitekey="6LdyrTobAAAAAFe_E_bD84_TGi2NGwSEPuW8v1N4"></div>
+				
+				<br>
+				<input type = 'submit' class="btn btn-outline-dark btn-sm" value = 'Transfer' style = "border-radius : 10px; width : 138px;">
+
+	
+		</form>
+		
+			<h6 style = "color: red;">
+  					{{ msg }}
+  			</h6>
+				
+				</div>
+				<div class="col-lg-6">
+				<br><br><br><br><img src = "https://blog.acemoneytransfer.com/wp-content/uploads/2019/05/money-transfer-gif.jpg" style = "width : 400px; height : 200px;">
+		 		</div>
+			</div>
+		</div>
+	
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

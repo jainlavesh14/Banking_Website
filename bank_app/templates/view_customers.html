@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %} View Customers {% endblock %}
+
+{% block body %}
+	<br>
+	<h1 style = "font-size : 40px; color: #54451d; font-family : 'Sitka Text';"> View Customers </h1>
+
+  	<table style = "width : 900px;" class="table table-striped table-bordered table-hover border-dark">
+
+	{% if data %}
+		<tr class="table-info" align = 'center'>
+			<th> Sr. No. </th>
+			<th> Name </th>
+			<th> Email ID </th>
+			<th> Balance </th>
+			<th> Info </th>
+		</tr>
+	{% endif %}
+		{% for d in data %}
+		<tr align = center>
+			<td>{{ forloop.counter }}</td>
+			<td>{{ d.name }}</td>
+			<td>{{ d.email }}</td>
+			<td>{{ d.balance }}</td>
+			<td><a href = "/more_info/{{ d.email }}">more</a></td>
+
+		</tr>	
+		{% empty %}
+		<tr align = 'center'>
+			<td>No Data</tr>
+		</tr>
+		{% endfor %}
+	
+</table>
+{% endblock %}

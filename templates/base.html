@@ -1,0 +1,78 @@
+<html>
+	
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+	
+
+<head>
+	<title>{% block title %} {% endblock %}</title>
+	<style>
+		* {font-size : 25px; font-family : Calibri;}
+		.nav{background-color : black;}
+		.nav a{color : white; text-decoration : none; padding : 20px; font-size : 30px;}
+		.nav a:hover{
+			color: yellow;
+			}
+		
+		.footer {
+		    	color: green;
+ 	   		font-size: 8px;
+    			<!background: #111111;>
+			width: 500px;
+		}
+		
+		 .info-box {
+		    font-size: 10px;
+		    color: #000000;
+		    text-align: center;
+		    box-shadow: 0 0 30px rgba(214, 215, 216, 1.5);
+  		    padding: 10px 0 10px 0;
+  		    border-radius: 15px;
+
+    }
+		
+   	</style>
+</head>
+
+<body>
+<center>
+<style>
+.nav i{
+      font-size: 28px;
+      color: #03fcdb;
+      border-radius: 50%;
+      padding: 8px;
+    }
+.nav j{
+      font-size: 28px;
+      color: #c9f0e9;
+      border-radius: 50%;
+      padding: 8px;
+    }
+</style>
+	<div class = 'nav' >
+		
+			
+			<a href = "{% url 'about' %}">About</a>
+			<a href = "{% url 'add_customer' %}">Add customer</a>
+			<a href = "{% url 'view_customers' %}">View customers</a>
+			<a href = "{% url 'transfer' %}">Transfer Money</a>
+			<a href = "{% url 'transaction_history'%}">Transaction History</a>
+			<a href = "{% url 'contact' %}">Contact Us</a>
+
+	</div>
+	{% block body %}
+	
+
+	{% endblock %}
+	<div class="col-lg-4">
+	<div class = "info-box" style = "background: #b9eefa">
+		<h6 style = "font-size: 20px;"> © Copyright Lavesh Jain. All Rights Reserved </h6>
+		<h6 style = "font-size: 20px;"> The Sparks Foundation </h6>
+	</div>
+	</div>
+	<br>
+</center>
+</body>
+</html>

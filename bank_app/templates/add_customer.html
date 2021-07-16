@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block title %} Add Customer {% endblock %}
+
+{% block body %}
+		<div class="container">
+		 	<div class="row">
+				<div class="col-lg-6">
+					<br>
+				<h1 style = "font-size : 40px; color: #54451d; font-family : 'Sitka Text';"> Add Customer </h1>
+	
+				<form method = "POST">
+				{% csrf_token %}
+							
+				<input type = 'text' class="form-control form-control-sm" placeholder = "Enter Full Name (with surname)" pattern="^([a-zA-Z]{2,}\s[a-zA-Z]{1,}'?-?[a-zA-Z]{2,}\s?([a-zA-Z]{1,})?)" required name = 'name'>
+				<br>
+
+				<input type = 'email' class="form-control form-control-sm" placeholder = "Enter Email" required name = 'email'>
+				<br>
+
+				<input type = 'text' class="form-control form-control-sm" placeholder = "Enter Mobile Number" pattern="^\d{10}$" required name = 'mobile_number'>
+				<br>
+
+				<input type = 'text' class="form-control form-control-sm" placeholder = "Enter Account Type(Savings / Current)" required name = 'account_type'>
+				<br>
+
+				<input type = 'number' class="form-control form-control-sm" placeholder = "Enter Starting Balance" min = "1000" required name = 'balance' step="any">
+				<br>
+	
+				<textarea class="form-control form-control-sm" rows="3" cols="30" placeholder = "Enter address" name = 'address' required style="resize: none;"></textarea>
+				<br>
+
+				<input type = 'submit' class="btn btn-outline-dark btn-sm" value = 'Submit' style = "border-radius : 10px; width : 138px;">
+	
+		</form>
+		{{ msg }}
+				</div>
+				<div class="col-lg-6">
+				<br><br><br><img src = "https://i1.wp.com/media4.giphy.com/media/5hgMcnAkBVcARGsGWu/giphy.gif?resize=480%2C360&ssl=1" style = "width : 400px">
+		 		</div>
+			</div>
+		</div>
+	
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

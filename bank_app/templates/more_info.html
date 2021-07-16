@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %} View Seleted {% endblock %}
+
+<style>
+
+
+</style>
+{% block body %}
+<br>
+
+<div class="container">
+		 	<div class="row" >
+				<div class="col-lg-7">
+					<h1 style = "font-size : 40px; color: #54451d; font-family : 'Sitka Text';" align=center> Details </h1>
+
+		<textarea readonly class="form-control form-control-sm" rows="1" cols="30" style="resize: none;">Name     :  {{ data.name }}</textarea><br>
+		  
+
+		<textarea readonly class="form-control form-control-sm" rows="1" cols="30" style="resize: none;">Email      :  {{ data.email }}</textarea><br>
+
+		<textarea readonly class="form-control form-control-sm" rows="1" cols="30" style="resize: none;">Mobile    :  {{ data.mobile_number }}</textarea><br>
+
+		<textarea readonly class="form-control form-control-sm" rows="1" cols="30" style="resize: none;">A/C Type :  {{ data.account_type }}</textarea><br>
+
+		<textarea readonly class="form-control form-control-sm" rows="1" cols="30" style="resize: none;">Balance   :  {{ data.balance }}</textarea><br>
+
+		<textarea readonly class="form-control form-control-sm" rows="3" cols="30" style="resize: none;">Address   :  {{ data.address }}</textarea><br>
+		
+		
+			</div>
+				<div class="col-lg-5"><br>
+				<img src = "https://cdn.dribbble.com/users/4241563/screenshots/11874468/media/7796309c77cf752615a3f9062e6a3b3d.gif" style = "width: 500px; padding-right: 100px">
+		 		</div>
+			</div>
+		</div>
+
+
+{% endblock %}
