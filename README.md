@@ -1,5 +1,5 @@
 # Banking_Website
-This project i.e. "Banking Website using Django" was made during my Internship at "The Sparks Foundation". 
+This project i.e. "Banking Website using Django Framework" was made during my Internship at "The Sparks Foundation". 
 
 In this project I have created 5 web pages and integrated them together under a banking website.
 1. About:                 This is only a informative web page which doesn't have any functionality.
