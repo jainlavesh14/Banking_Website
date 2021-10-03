@@ -1,5 +1,6 @@
-# Banking_Website
+# Banking_Website using Django Framework.
 This project i.e. "Banking Website using Django" was made during my Internship at "The Sparks Foundation". 
+Here I have also used an google API for logging in. (I am not a robot validation
 
 In this project I have created 5 web pages and integrated them together under a banking website.
 1. About:                 This is only a informative web page which doesn't have any functionality.
@@ -9,7 +10,7 @@ In this project I have created 5 web pages and integrated them together under a 
 4. Transfer Money:        Here, the user needs to select the sender and the beneficiary for the transfer of money. After all the validations are found satisfied, 
                           the transaction will take place resulting into debit from sender account and credit in receiver's account. Both of them involved in the transaction
                           will receive an alert on the email registered.
-5. Transaction HistoryI:  In this page the user needs to select an account holder of which he/she wants to view the transaction history. The user will also receive an email
+5. Transaction History:   In this page the user needs to select an account holder of which he/she wants to view the transaction history. The user will also receive an email
                           with an attachment of his/her transaction history in pdf format.
 6. Contact/Reach Us:      This is also an informative page without any functionalities implemented where the user can reach us using the conctact details, address,
                           emails provided. He can reach us through the social media link provided.
